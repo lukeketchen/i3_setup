@@ -1,0 +1,82 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 458,
+       "width": 642,
+       "x": 0,
+       "y": 0
+    },
+    "name": "cmus v2.7.1",
+    "percent": 0.5,
+    "swallows": [
+       {
+       // "class": "^Mate\\-terminal$",
+       // "instance": "^mate\\-terminal$",
+       // "title": "^cmus\\ v2\\.7\\.1$",
+       // "transient_for": "^$",
+        "window_role": "^CMUS_WINDOW$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 458,
+               "width": 642,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Terminal",
+            "percent": 0.7,
+            "swallows": [
+               {
+               // "class": "^Mate\\-terminal$",
+               // "instance": "^mate\\-terminal$",
+               // "title": "^Terminal$",
+               // "transient_for": "^$",
+                "window_role": "^PULSE_WINDOW$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 458,
+               "width": 642,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cava",
+            "percent": 0.3,
+            "swallows": [
+               {
+               // "class": "^Mate\\-terminal$",
+               // "instance": "^mate\\-terminal$",
+               // "title": "^cava$",
+               // "transient_for": "^$",
+                "window_role": "^CAVA_WINDOW$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

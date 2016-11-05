@@ -150,12 +150,11 @@ exec_always google-chrome
 exec klavaro
 
 #set up the second workspace to play audio
-exec_always --no-startup-id i3-msg 'workspace $workspace2; split h'
-exec_always --no-startup-id i3-msg 'workspace $workspace2; exec mate-terminal -e cmus'
-exec_always --no-startup-id i3-msg 'workspace $workspace2; split h'
-exec_always --no-startup-id i3-msg 'workspace $workspace2; exec mate-terminal -e ~/.config/pulsemixer-master/pulsemixer;'
-exec_always --no-startup-id i3-msg 'workspace $workspace2; split v'
-exec_always --no-startup-id i3-msg 'workspace $workspace2; exec mate-terminal -e cava'
+exec_always --no-startup-id i3-msg 'workspace $workspace2; append_layout /home/killer/.config/i3/workspace-2.json'
+exec_always --no-startup-id i3-msg 'workspace $workspace2; exec mate-terminal --role=CMUS_WINDOW -e cmus'
+exec_always --no-startup-id i3-msg 'workspace $workspace2; exec mate-terminal --role=PULSE_WINDOW -e ~/.config/pulsemixer-master/pulsemixer;'
+exec_always --no-startup-id i3-msg 'workspace $workspace2; exec mate-terminal ---role=CAVA_WINDOW -e cava'
+exec_always --no-startup-id i3-msg 'workspace $workspace1; exec mate-terminal ---role=RELOAD_VIW -e day'
 
 #i3-gaps settings
 gaps inner 10

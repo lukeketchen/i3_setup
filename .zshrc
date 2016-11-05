@@ -89,6 +89,7 @@ alias kali="VBoxManage startvm kali"
 alias cspull="cd /opt/lampp/htdocs/reloadcsgo/website &&  git pull"
 alias xstart="sudo /opt/lampp/lampp start"
 alias xstop="sudo /opt/lampp/lampp stop"
+alias day="cspull && xstart && vim -c 'NERDTree'"
 
 #For commiting git repos 
 alias gitme='\gitme'
