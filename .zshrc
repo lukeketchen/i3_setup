@@ -100,32 +100,7 @@ function gitme() {
     git add . && git commit -m $comment && git push -u origin master;
 }
 
-#screen output selector
-alias screen='\screentype'
-#function screentype(){
-#	echo "How many Screens?";
-#	read number;
-#	echo $number;
-#	if[["$number" == "1"]]; then
-#	echo "Only 1 screen you pussy";
-#fi
-#	elif["$number" == "2"];
-# then
-#	echo "hdmi or vga?";
-#	elif["$number" == "3"];
-# then
-#	echo "3 Screens wow";
-#	read answer;
-#	if[answer=="hdmi"]
-#	then
-#	exec "/home/killer/.screenlayout/2screenhdmi.sh"
-#	if[answer=="vga"]
-#	then
-#	exec "/home/killer/.screenlayout/2screenvga.sh"
-#}
-
-
 #This sets the quotes and images when the terminal starts
-if [ -x /usr/games/cowsay -a -x /usr/games/fortune ]; then
-   fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
-fi
+#if [ -x /usr/games/cowsay -a -x /usr/games/fortune ]; then
+#   fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
+#fi

@@ -75,6 +75,7 @@ bindsym $mod+Shift+Right move right
 #Touchpad disable/enable
 bindsym $mod+t exec "synclient Touchpadoff=1"
 bindsym $mod+Shift+t exec "synclient Touchpadoff=0"
+exec "synclient Touchpadoff=0"
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -114,7 +115,6 @@ set $workspace8 "8: Tab"
 set $workspace9 "9:   Kali"
 set $workspace10 "10: Thunar"
 
-
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -141,7 +141,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # set the default programs to run on workspaces
 assign [class="Google-chrome"] $workspace3
-assign [class="klavaro"] $workspace5
+assign [class="Klavaro"] $workspace4
 assign [class="VirtualBox"] $workspace9
 assign [class="Thunar"] $workspace10
 
@@ -154,10 +154,12 @@ exec_always --no-startup-id i3-msg 'workspace $workspace2; append_layout /home/k
 exec_always --no-startup-id i3-msg 'workspace $workspace2; exec mate-terminal --role=CMUS_WINDOW -e cmus'
 exec_always --no-startup-id i3-msg 'workspace $workspace2; exec mate-terminal --role=PULSE_WINDOW -e ~/.config/pulsemixer-master/pulsemixer;'
 exec_always --no-startup-id i3-msg 'workspace $workspace2; exec mate-terminal ---role=CAVA_WINDOW -e cava'
-exec_always --no-startup-id i3-msg 'workspace $workspace1; exec mate-terminal ---role=RELOAD_VIW -e day'
+exec_always --no-startup-id i3-msg 'workspace $workspace1; exec mate-terminal '
+#exec_always --no-startup-id i3-msg 'workspace $workspace1; exec mate-terminal -e day '
 
 #i3-gaps settings
 gaps inner 10
+smart_gaps on
 
 # set up the first worspace to run after the music page is set up 
 #exec_always --no-startup-id i3-msg 'workspace $workspace1; exec mate-terminal -e cspull'
@@ -170,11 +172,6 @@ bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-#set the window manager to the corect screen plugged in
-#bindsym $mod+w+1 exec "/home/killer/.screenlayout/1screen.sh"
-#bindsym $mod+w+3 exec "/home/killer/.screenlayout/3screens.sh"
-#bindsym $mod+p exec screentype
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -231,9 +228,9 @@ position top
 #first desable defaults
 for_window [class="^.*"] border pixel 0
 
-# set the lock command and lock screen
-bindsym $mod+shift+x exec "~/.local/bin/fuzzy_lock.sh"
-exec xautolock -corners ---- -time 15 -locker '~/.local/bin/fuzzy_lock.sh' &
+# set the screen saver and lock screen
+bindsym $mod+shift+x exec xscreensaver-command --lock 
+exec xscreensaver
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
