@@ -111,7 +111,7 @@ set $workspace4 "4: Tab"
 set $workspace5 "5: Tab"
 set $workspace6 "6: Tab"
 set $workspace7 "7: Tab"
-set $workspace8 "8: Tab"
+set $workspace8 "8: Android Studios"
 set $workspace9 "9:   Kali"
 set $workspace10 "10: Thunar"
 
@@ -142,6 +142,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # set the default programs to run on workspaces
 assign [class="Google-chrome"] $workspace3
 assign [class="Klavaro"] $workspace4
+assign [class="jetbrains-studio"] $workspace8
 assign [class="VirtualBox"] $workspace9
 assign [class="Thunar"] $workspace10
 
