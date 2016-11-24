@@ -245,7 +245,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # set the wallpaper everytime
-exec_always feh --bg-scale /home/killer/Pictures/fire-skull-wallpapers-18.jpg
+exec_always feh --bg-scale /home/killer/Pictures/umbrella.png
 
 #set the default start programs
 exec_always  compton -f
